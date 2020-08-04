@@ -11,6 +11,7 @@
 </head>
 <body>
 	<h2>Current Gold: <c:out value="${sessionScope.gold}" /></h2>
+	
 	<div class="row">
 		<div class="col-3">
 			<div class="card">
@@ -53,6 +54,15 @@
 			</div>
 		</div>
 	</div>
+	
+	<h2>Activity Log</h2>
+	
+	<ul class="list-unstyled">
+		<c:forEach var="message" items="${sessionScope.log}">
+			<li><c:out value="${message}"/></li>
+		</c:forEach>
+	</ul>
+	
 	<script src="webjars/jquery/3.5.1/jquery.min.js"></script>
 	<script src="webjars/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
